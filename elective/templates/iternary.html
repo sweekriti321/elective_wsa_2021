@@ -1,0 +1,51 @@
+<!-- <h2>This is form Ajax:
+{{ result["trekId"]}}</h2> -->
+<style type="text/css">
+	table {
+  border-collapse: collapse;
+}
+ th {
+  background: #ccc;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background: #efefef;
+}
+
+tr:hover {
+  background: #d1d1d1;
+}
+</style>
+
+{% if result["iternaries"] %}
+
+<table class="my_table">
+  <tr>
+    <th>Day </th>
+    <th>Title</th>
+    <th>Route</th>
+    <th>Description</th>
+    <th>Duration</th>
+    <th>Cost</th>
+  </tr>
+  {% for row in result['iternaries'] %}
+  <tr>
+    <td>{{row.2}}</td>
+    <td>{{row.1}}</td>
+    <td>{{row.3}}-{{row.4}}</td>
+    <td>{{row.5}}</td>
+    <td>{{row.6}}</td>
+    <td>{{row.7}}</td>
+
+  </tr>
+{% endfor %}
+
+</table>
+{% else %}
+<h3> No Data Found</h3>
+{% endif %}
